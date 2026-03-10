@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Strengthening my Backend Engineering skills in conjuction with System Design",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tendocalvin1/systems-engineering.git"
+  },
+  "author": "Tendo Calvin {full-stack engineer}",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tendocalvin1/systems-engineering/issues"
+  },
+  "homepage": "https://github.com/tendocalvin1/systems-engineering#readme"
+}
