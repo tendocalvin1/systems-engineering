@@ -2,9 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Strengthening my Backend Engineering skills in conjuction with System Design",
-  "main": "index.js",
+  "main": "backend-folder/src/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend-folder/src/index.js",
+    "dev": "nodemon backend-folder/src/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/tendocalvin1/systems-engineering/issues"
   },
-  "homepage": "https://github.com/tendocalvin1/systems-engineering#readme"
+  "homepage": "https://github.com/tendocalvin1/systems-engineering#readme",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.3.0",
+    "nodemon": "^3.1.14"
+  }
 }
