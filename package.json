@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Strengthening my Backend Engineering skills in conjuction with System Design",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/tendocalvin1/systems-engineering/issues"
   },
-  "homepage": "https://github.com/tendocalvin1/systems-engineering#readme"
+  "homepage": "https://github.com/tendocalvin1/systems-engineering#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.3.0"
+  }
 }
