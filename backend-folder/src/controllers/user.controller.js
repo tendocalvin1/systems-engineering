@@ -1,6 +1,8 @@
 
 import { User } from "../models/user.model.js";
 
+// adding a new user
+
 const registerUser = async (req, res ) =>{
 
     try {
@@ -36,4 +38,37 @@ const registerUser = async (req, res ) =>{
 }
 
 
-export { registerUser }
+// The user logging in into the system with their credentials.
+const loginUser = async (req, res) => {
+    try {
+     // checking if the user already exists
+
+     const {email, password} = req.body
+
+     const user = await User.findOne({
+        email: email.toLowerCase()
+     });
+
+     if(!user) return res.status(404).json({message: "User not found"})
+
+    // checking and comparing passwords
+
+    const isMatch = await user.comparePassword(password);
+    if(!isMatch) return res.status(400).json({message: "Invalid credentials"})
+
+    res.status(200).json({message: "User logged in sucessfully",
+        user: {
+            id: user._id,
+            email: user.email,
+            username: user.username
+        }
+    })  
+        
+    } catch (error) {
+        res.status(500).json({message: "Internal server error", error: error.message});
+    }
+}
+
+
+
+export { registerUser, loginUser }
