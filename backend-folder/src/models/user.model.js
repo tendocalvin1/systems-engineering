@@ -20,7 +20,8 @@ const userSchema = new Schema (
             type: String,
             required: [true, "Password is required"],
             minLength: 5,
-            maxLength: 30
+            maxLength: 30,
+            select: false
         },
 
         email : {
@@ -51,8 +52,9 @@ userSchema.pre("save", async function (next) {
 
 // compare passwords
 
-userSchema.methods.comparePassword = async function (next){
-    return await bcrypt.compare(password, this.password)
+userSchema.methods.comparePassword = async function (candidatePassword){
+    return await bcrypt.compare(candidatePassword, this.password)
+
 }
 
 
