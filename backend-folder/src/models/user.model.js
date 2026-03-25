@@ -43,12 +43,11 @@ const userSchema = new Schema (
 
 // before saving the password of any user, we need to hash it.
 userSchema.pre("save", async function (next) {
-    if(!this.isModified("passowrd")) return next();
-    this.password = await bcrypt.hash(this.pasword, 20)
+    if (!this.isModified("password")) return next();
 
-    next();
-
-})
+    this.password = await bcrypt.hash(this.password, 10);
+    
+});
 
 // compare passwords
 
